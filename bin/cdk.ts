@@ -10,8 +10,8 @@ const app = new cdk.App();
 
   const stackProperties = {
     env: {
-      account: '',
-      region: "us-east1",
+      account: '411453012264',
+      region: "us-east-1",
     },
     tags: {
       cost: "test_cdk"
@@ -20,9 +20,9 @@ const app = new cdk.App();
   
 
 
-  const vpc = new VpcStack(app, "VpcStack", stackProperties)
-  const instancia = new Instancia(app, "Instancia", stackProperties)
-  
+  const vpcStack = new VpcStack(app, "VpcStack", stackProperties)
+  const instancia = new Instancia(app, "Instancia", vpcStack.vpc, stackProperties)
+
 
 
   /* If you don't specify 'env', this stack will be environment-agnostic.
