@@ -3,7 +3,7 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { VpcStack } from '../lib/vpc-stack';
 import { Instance } from 'aws-cdk-lib/aws-ec2';
-import { Instancia } from '../lib/instancia-stack';
+import { Instancia } from '../lib/instancia-type-stack';
 import { Elb } from '../lib/elb-stack';
 
 const app = new cdk.App();
