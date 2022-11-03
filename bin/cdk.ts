@@ -5,6 +5,7 @@ import { VpcStack } from '../lib/vpc-stack';
 import { Instance } from 'aws-cdk-lib/aws-ec2';
 import { Instancia } from '../lib/instancia-type-stack';
 import { Elb } from '../lib/elb-stack';
+import { EcsCluster } from '../lib/ecs-cluster-stack';
 
 const app = new cdk.App();
 
@@ -21,6 +22,7 @@ const stackProperties = {
 const vpcStack = new VpcStack(app, 'VpcStack', stackProperties);
 const instancia = new Instancia(app, 'Instancia', vpcStack.vpc, stackProperties);
 const elb = new Elb(app, 'ELB', vpcStack.vpc, instancia.instanciaType, stackProperties);
+const ecscluster = new EcsCluster(app, 'EcsCluster', vpcStack.vpc, stackProperties);
 
 /* If you don't specify 'env', this stack will be environment-agnostic.
  * Account/Region-dependent features and context lookups will not work,
