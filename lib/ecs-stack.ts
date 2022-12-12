@@ -4,7 +4,7 @@ import * as ecs from 'aws-cdk-lib/aws-ecs';
 import { Construct } from 'constructs';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 
-export class EcsClusterTeste extends cdk.Stack {
+export class ContainerECS extends cdk.Stack {
 	constructor(scope: Construct, id: string, table: dynamodb.Table, vpc: ec2.Vpc, props?: cdk.StackProps) {
 		super(scope, id, props);
 

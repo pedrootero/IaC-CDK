@@ -7,7 +7,7 @@ import { Instancia } from '../lib/instancia-type-stack';
 import { Elb } from '../lib/elb-stack';
 import { EcsCluster } from '../lib/ecs-cluster-stack';
 import { TableDynamo } from '../lib/dynamo-stack';
-import { EcsClusterTeste } from '../lib/ecs-stack';
+import { ContainerECS } from '../lib/ecs-stack';
 
 const app = new cdk.App();
 
@@ -26,8 +26,8 @@ const instancia = new Instancia(app, 'Instancia', vpcStack.vpc, stackProperties)
 const elb = new Elb(app, 'ELB', vpcStack.vpc, instancia.instanciaType, stackProperties);
 const dynamoStack = new TableDynamo(app, 'DynamoTable', stackProperties);
 const ecscluster = new EcsCluster(app, 'EcsCluster', dynamoStack.table, vpcStack.vpc, stackProperties);
-const EcsClusterteste = new EcsClusterTeste(app, 'EcsClusterTeste', dynamoStack.table, vpcStack.vpc, stackProperties);
-
+const EcsClusterteste = new ContainerECS(app, 'EcsClusterTeste', dynamoStack.table, vpcStack.vpc, stackProperties);
+ecscluster.addDependency(EcsClusterteste);
 /* If you don't specify 'env', this stack will be environment-agnostic.
  * Account/Region-dependent features and context lookups will not work,
  * but a single synthesized template can be deployed anywhere. */
