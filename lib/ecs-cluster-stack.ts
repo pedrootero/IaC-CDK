@@ -13,8 +13,8 @@ export class EcsCluster extends cdk.Stack {
 			vpc: vpc,
 		});
 
-		const repository = new ecr.Repository(this, 'workshop-api', {
-			repositoryName: 'workshop-api',
+		const repository = new ecr.Repository(this, 'otero', {
+			repositoryName: 'otero',
 		});
 
 		const executionRolePolicy = new iam.PolicyStatement({
@@ -47,6 +47,7 @@ export class EcsCluster extends cdk.Stack {
 		const container = fargateTaskDefinition.addContainer('backend', {
 			// Use an image from Amazon ECR
 			image: ecs.ContainerImage.fromRegistry(repository.repositoryUri),
+			//image: ecs.ContainerImage.fromRegistry("amazon/otero-teste:0.1"),
 			logging: ecs.LogDrivers.awsLogs({ streamPrefix: 'workshop-api' }),
 			environment: {
 				DYNAMODB_TABLE: table.tableName,
