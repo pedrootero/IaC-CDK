@@ -1,9 +1,7 @@
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import { RemovalPolicy, CfnOutput } from 'aws-cdk-lib';
-import { CfnDisk } from 'aws-cdk-lib/aws-lightsail';
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import * as ec2 from 'aws-cdk-lib/aws-ec2';
 
 export class TableDynamo extends cdk.Stack {
 	readonly table: dynamodb.Table;
@@ -24,6 +22,6 @@ export class TableDynamo extends cdk.Stack {
 			removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
 		});
 
-		//new CfnOutput(this, 'TableTest', { value: this.table.tableName });
+		new CfnOutput(this, 'TableTest', { value: this.table.tableName });
 	}
 }

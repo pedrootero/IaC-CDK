@@ -1,5 +1,5 @@
 #!/bin/bash
 sudo su
-yum install -y httpd
-systemctl start httpd
-systemctl enable httpd
+yum install -y nginx
+systemctl start nginx
+systemctl enable nginx

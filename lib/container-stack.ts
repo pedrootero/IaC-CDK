@@ -17,7 +17,7 @@ export class ContainerECS extends cdk.Stack {
 			cluster: cluster, // Required
 			cpu: 512, // Default is 256
 			desiredCount: 6, // Default is 1
-			taskImageOptions: { image: ecs.ContainerImage.fromRegistry('amazon/otero:0.1') },
+			taskImageOptions: { image: ecs.ContainerImage.fromRegistry('amazon/otero:latest') },
 			memoryLimitMiB: 2048, // Default is 512
 			publicLoadBalancer: true, // Default is true
 		});
