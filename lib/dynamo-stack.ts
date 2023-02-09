@@ -10,6 +10,7 @@ export class TableDynamo extends cdk.Stack {
 		super(scope, id, props);
 
 		this.table = new dynamodb.Table(this, 'TableTest', {
+			tableName: 'TableTest',
 			partitionKey: {
 				name: 'app_id',
 				type: dynamodb.AttributeType.STRING,
@@ -22,6 +23,6 @@ export class TableDynamo extends cdk.Stack {
 			removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
 		});
 
-		new CfnOutput(this, 'TableTest', { value: this.table.tableName });
+		new CfnOutput(this, 'CfnTableTest', { value: this.table.tableName });
 	}
 }
