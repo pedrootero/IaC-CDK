@@ -12,13 +12,14 @@ export class TableDynamo extends cdk.Stack {
 		this.table = new dynamodb.Table(this, 'TableTest', {
 			tableName: 'TableTest',
 			partitionKey: {
-				name: 'app_id',
+				name: 'id',
 				type: dynamodb.AttributeType.STRING,
 			},
 			sortKey: {
-				name: 'created_at',
-				type: dynamodb.AttributeType.NUMBER,
+				name: 'sk',
+				type: dynamodb.AttributeType.STRING,
 			},
+			timeToLiveAttribute: 'ttl',
 			billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
 			removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
 		});
