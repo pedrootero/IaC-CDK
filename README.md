@@ -1,7 +1,7 @@
 
-# ECS + ELB cluster provisioning
+# IaC AWS/CDK
 
-This code provisions an infrastructure on AWS with an ECS cluster and ELB to serve a container for a backend application.
+Este código provisiona uma infraestrutura na AWS com um cluster ECS e ELB para servir um contêiner para um aplicativo backend.
 
 
 ## Autores
