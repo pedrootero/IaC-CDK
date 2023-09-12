@@ -1,14 +1,44 @@
-# Welcome to your CDK TypeScript project
 
-This is a blank project for CDK development with TypeScript.
+# ECS + ELB cluster provisioning
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This code provisions an infrastructure on AWS with an ECS cluster and ELB to serve a container for a backend application.
 
-## Useful commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+## Autores
+
+- [@pedrootero](https://www.github.com/pedrootero)
+
+
+## Deploy
+
+### Siga os passos abaixo:
+
+
+Certifique-se de ter instalado o aws-cli
+    
+    https://aws.amazon.com/pt/cli/
+
+```bash
+  aws --v
+```
+
+Verifique se as credenciais AWS estão configuradas.
+
+```bash
+  aws configure list
+```
+
+Instale as dependencias do projeto 
+
+```bash
+  npm i
+```
+faça o deploy do ambiente 
+
+```bash
+  cdk bootstrap
+```
+
+```bash
+   cdk deploy --all --require-approval never
+```
