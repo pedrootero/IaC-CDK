@@ -1,13 +1,20 @@
 
 # IaC AWS/CDK
 
-Este código provisiona uma infraestrutura na AWS com um cluster ECS e ELB para servir um contêiner para um aplicativo backend.
+Este código provisiona uma infraestrutura na AWS com um cluster ECS mais ELB para servir um backend em container.
 
 
 ## Autores
 
 - [@pedrootero](https://www.github.com/pedrootero)
 
+## Tech
+
+- [Node.js] - Linguagem de programação backend para provisionar a infraestrutura
+- [AWS-ECS] - Amazon Elastic Container Service (Orquestrador de containers)
+- [AWS-ELB] - Amazon Load Balancer (balanceamento de carga)
+- [AWS-ECR] - Amazon Elastic Container Registry (Repositório de containers)
+- [Docker] - Para criar a imagem do container do backend
 
 ## Deploy
 
