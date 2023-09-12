@@ -10,7 +10,7 @@ Este código provisiona uma infraestrutura na AWS com um cluster ECS mais ELB pa
 
 ## Tech
 
-- [Node.js] - Linguagem de programação backend para provisionar a infraestrutura
+- [Node.js] - Linguagem de programação backend para provisionar a infraestrutura como código
 - [AWS-ECS] - Amazon Elastic Container Service (Orquestrador de containers)
 - [AWS-ELB] - Amazon Load Balancer (balanceamento de carga)
 - [AWS-ECR] - Amazon Elastic Container Registry (Repositório de containers)
